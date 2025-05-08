@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <!-- Tipografias -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhema-Logos</title>
+    <title>Rhema.Logos</title>
 </head>
 <body>
-    Hola mundo desde html y GitHub
+    <!-- Cabecera -->
+    <!-- Para el diseño de la cabecera tienes de dos manejar un bg-image que guarde cabecera y cuerpo, 
+    o dos contenedores dentro del header para asi poder manejar cabecera separa de la imagen como en la otra pagina
+    por el momento manejaras los dos pero de diferente manera comentando y descomentando los contenedores-->
+    <div class="contCabGen">
+        <header class="cabecera">
+            <div class="cabTitulo">
+                <h1>
+                    <a href="#" class="linkCabe">Rhema.Logos</a>
+                </h1>
+            </div>
+            <div class="contOtraInfo">
+                <ul class="lista1">
+                    <li class="punto1">
+                        <span>
+                            <a href="#" class="linkCabe">
+                            Recursos
+                            </a>
+                        </span>
+                    </li>
+                    <li class="apareceRedes">
+                        <span class="redDis" id="redes"> Redes sociales</span>
+                        <ul class="subList">
+                            <li class="red1">
+                                <a href="#" class="linkRedes">Instagram</a>
+                            </li>
+                            <li class="red2" >
+                                <a href="#" class="linkRedes">Facebook</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- El siguiente contenedor contendra el SVG de la hamburgesa, este desaparecera en '
+                desktop y aparecera en dispositivos mobiles.-->
+            <div class="contBurger">
+                <button class="btnHamburger">
+                    <svg class="hamburgesa" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" ><path d="M19,4H0v-1H19v1ZM0,20H19v-1H0v1ZM5,11v1H24v-1H5Z"/></svg>
+                </button>
+            </div>
+        </header>
+        <section class="sect1fond"></section>
+    </div>
+
+
+    <!-- Fin de la cabecera -->
 </body>
 </html>

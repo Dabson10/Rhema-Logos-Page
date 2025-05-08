@@ -1,0 +1,256 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: light;
+}
+/*-----------------------------------------Diseño de la cabecera----------------------------*/
+.contCabGen{
+    background-image: url(/imagenes/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.cabecera{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    position:sticky
+}
+.cabTitulo{
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+/* Este contenedor aparecera para desktop pero no aparecerea para mobiles, para tenerlo en cuenta */
+.contOtraInfo{
+    width: 100%;
+}
+.contOtraInfo{
+    display:flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    position:static;
+}
+.lista1{
+    display:flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    position:absolute;
+}
+.contOtraInfo .lista1 .punto1{
+    border: 2px solid black;
+    padding:5px 20px
+}
+/* .contOtraInfo .lista1 .punto1:hover,.linkCabe:hover{
+    color:white;
+} */
+.linkCabe{
+    text-decoration: none;
+    color:black
+}
+/* Para hacer el menu desplegable es necesario un contenedor estra dentro de el ul de 
+redes sociales, los siguientes estilos seras para esa sublista con ul y li */
+.subList{
+    display:none;
+    position:absolute;
+    left:-1%; 
+    margin-top:6px
+}
+.apareceRedes{
+    border:2px solid black;
+    padding:5px 20px;
+    position:relative;
+    /* border-bottom: none; */
+}
+.apareceRedes:hover{
+    border-bottom: 2px solid white;
+}
+.apareceRedes:hover .subList{
+    display:flex;
+    flex-direction: column;
+    padding:0;
+    list-style-type: none;
+    color:white;
+    gap:5px;
+}
+.subList{
+    padding:0
+}
+.subList li{
+    background-color: transparent;
+    width: 100%;
+    padding: 5px 17.8px ;
+    margin:0;
+    border:2px solid black
+}
+.linkRedes:hover{
+    text-decoration: underline;
+}
+.linkRedes{
+    text-decoration: none;
+    color:black;
+}
+
+
+/* El siguiente contenedor aparecera solamente en dispositivos mobiles,
+por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobiles*/
+.hamburgesa{
+    display:none;
+    width: 20px;
+}
+.contBurger{
+    width: 100%;
+    display:none;
+    justify-content: end;
+    /* padding-right: 80px; */
+}
+.btnHamburger{
+    width: 20%;
+    display:flex;
+    justify-content: center;
+    height: 2.5em;
+    background-color: transparent;
+    border:none
+}
+
+
+
+/* Media querie para diferentes tipos de pantalla  */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 40px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        margin-right: auto;
+        padding-right: 40px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+
+}
+@media screen and (min-width: 425px) and (max-width: 768px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 40px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 15px;
+    }
+    .btnHamburger{
+        width: 20%;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 24px;
+    }
+}
+
+/* Medidas de 375 a 425 */
+@media screen and (min-width: 375px) and (max-width: 425px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 30px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 20px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 25px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 20px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 320px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 22px;
+    }
+    .contBurger{
+        /* width: 100%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 14px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 18px;
+    }
+}
