@@ -1,0 +1,620 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    
+}
+/*-----------------------------------------Diseño de la cabecera----------------------------*/
+.contCabGen{
+    background-image: url(/imagenes/fondRecursos.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 110vh;
+    display:flex;
+}
+.titulo{
+    font-weight: 400;
+    font-style: light;
+}
+.cabecera{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    position:fixed;
+    transition: background-color 0.3s ease;
+}
+.contCab{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    top:.1%;
+    z-index: 99;
+}
+header.con-fondo{
+    /* background-color: rgba(255, 255, 255, 0.474); */
+    background-color: #ffffffcc;
+    border-bottom: 1px solid #272829;
+    z-index: 999;
+}
+.cabTitulo{
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+/* Este contenedor aparecera para desktop pero no aparecerea para mobiles, para tenerlo en cuenta */
+.contOtraInfo{
+    width: 100%;
+}
+.contOtraInfo{
+    display:flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    position:static;
+}
+.lista1{
+    display:flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    position:absolute;
+}
+.contOtraInfo .lista1 .punto1{
+    border: 2px solid #272829;
+    padding:5px 20px
+}
+
+.linkCabe{
+    text-decoration: none;
+    color:black
+}
+/* Para hacer el menu desplegable es necesario un contenedor estra dentro de el ul de 
+redes sociales, los siguientes estilos seras para esa sublista con ul y li */
+.subList{
+    display:none;
+    position:absolute;
+    left:-1%; 
+    margin-top:6px
+}
+.apareceRedes{
+    border:2px solid black;
+    padding:5px 20px;
+    position:relative;
+
+}
+.apareceRedes:hover{
+    border-bottom: 2px solid transparent;
+}
+.apareceRedes:hover .subList{
+    display:flex;
+    flex-direction: column;
+    padding:0;
+    list-style-type: none;
+    color:white;
+}
+.subList{
+    padding:0
+}
+.red1{
+    width: 100%;
+    padding: 5px 17.8px ;
+    margin:0;
+    border:2px solid black;
+}
+.red2{
+    background-color: transparent;
+    width: 100%;
+    padding: 5px 17.8px ;
+    margin:0;
+    border:2px solid black;
+    border-top: none;
+}
+/* El siguiente bloque de diseño es para cuando se desplaza la pagina cierta cantidad
+y se le dara un color a la pagina con respecto a el color de fondo de la cabecera. */
+.red1.con-color, .red2.con-color{
+    background-color: #ffffffcc;
+
+}
+.linkRedes:hover{
+    text-decoration: underline;
+}
+.linkRedes{
+    text-decoration: none;
+    color:black;
+}
+
+
+/* El siguiente contenedor aparecera solamente en dispositivos mobiles,
+por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobiles*/
+.hamburgesa{
+    display:none;
+    width: 20px;
+}
+.contBurger{
+    width: 100%;
+    display:none;
+    justify-content: end;
+    /* padding-right: 80px; */
+}
+.btnHamburger{
+    width: 20%;
+    display:flex;
+    justify-content: center;
+    height: 2.5em;
+    background-color: transparent;
+    border:none;
+}
+/* Los siguientes contenedores seran los del submenu */
+.contRedMobil{
+    display:none;
+    /* background-color: rgba(255, 255, 255, 0.474); */
+    transition: background-color 0.3s ease;
+}
+.subMenu{
+    display:flex;
+    justify-content: center;
+    gap:20px;
+    padding: 25px 0;
+    /* transition: background-color 0.3s ease; */
+}
+.imagCab1{
+    background-image: url(/imagenes/recursos.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 14em;
+}
+.imagCab2{
+    background-image: url(/imagenes/redes.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 14em;
+}
+.cardOpc{
+    display:flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: white;
+    border-radius: .6em;
+    overflow:auto;
+}
+.contCard{
+    padding:5px 20px
+}
+.contRedesSub{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.redSub{
+    display:flex;
+    gap:10px
+}
+.linkRedSub{
+    padding:5px 10px;
+    margin-bottom: 15px;
+    border:2px solid black;
+    color:black;
+    text-decoration: none;
+}
+.linkRedSub:hover{
+    text-decoration: underline;
+}
+.iconRedes{
+    width: 20px;
+}
+.recurso:hover{
+    cursor: pointer;
+}
+/* Esta siguiente seccion es para agregar el versiculo en mitad del fondo. */
+
+.sect1fond{
+    position:absolute;
+    top:25%;
+    left:2%;
+    padding:0 40px;
+    width: 60%;
+    color:#fafafa;
+    /* z-index: ; */
+}
+.sect1fond.active{
+    display:none;
+}
+.slogText{
+    font-weight: 400;
+    font-size: 40px;
+    font-style: italic;
+    text-shadow: 5px 5px 7px rgb(39, 40, 41);
+    margin-bottom: 0;
+}
+.slogSubText{
+    font-weight: 400;
+    font-size: 30px;
+    font-style: italic;
+    text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+
+
+
+
+/* Media querie para diferentes tipos de pantalla  */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:flex;
+        width: 40px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        /* flex-direction: column; */
+        margin-right: auto;
+        padding-right: 40px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .contRedMobil.active{
+        display:flex;
+    }
+    /* Diseño para el versiculo de en medio */
+    .sect1fond{
+    position:absolute;
+    top:25%;
+    left:2%;
+    padding:0 40px;
+    width: 70%;
+    color:#fafafa;
+}
+.slogText{
+    font-weight: 400;
+    font-size: 30px;
+    font-style: italic;
+    text-shadow: 5px 5px 7px rgb(39, 40, 41);
+    margin-bottom: 0;
+}
+.slogSubText{
+    font-weight: 400;
+    font-size: 25px;
+    font-style: italic;
+    text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+
+}
+@media screen and (min-width: 425px) and (max-width: 768px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 40px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 15px;
+    }
+    .btnHamburger{
+        width: 20%;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 24px;
+    }
+    .contRedMobil.active{
+        display:flex;
+    }
+    .contRedesSub{
+        gap:10px;
+        display:flex;
+        flex-direction: column;
+    }
+    .imagCab1,.imagCab2{
+        height: 9em;
+    }
+    .textCard{
+        font-size: 13px;
+    }
+    .linkRedSub{
+        padding:2px 10px;
+    }
+    /* Diseño para el versiculo de en medio */
+    .sect1fond{
+    position:absolute;
+    top:25%;
+    left:2%;
+    padding:0 40px;
+    width: 70%;
+    color:#fafafa;
+}
+.slogText{
+    font-weight: 400;
+    font-size: 30px;
+    font-style: italic;
+    text-shadow: 5px 5px 7px rgb(39, 40, 41);
+    margin-bottom: 0;
+}
+.slogSubText{
+    font-weight: 400;
+    font-size: 25px;
+    font-style: italic;
+    text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+}
+
+/* Medidas de 375 a 425 */
+@media screen and (min-width: 375px) and (max-width: 425px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 30px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 20px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 22px;
+    }
+    /* Ajuste para la seccion de subcabecera */
+    .contRedMobil.active{
+        display:flex;
+    }
+    .subMenu{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .cardOpc{
+        display:flex;
+        flex-direction: row;
+        width: 95%;
+    }
+    .imagCab1,.imagCab2{
+        height: 100%;
+        /* width: 0em; */
+    }
+    .imagCab1{
+        width: 50%;
+    }
+    
+    .textCard{
+        font-size: 13px;
+    }
+    .linkRedSub{
+        padding:2px 10px;
+    }
+    .contRedesSub{
+        gap:10px;
+        display:flex;
+        flex-direction: column;
+    }
+    .reducir{
+        width: 80%;
+    }
+    /* Diseño para el versiculo de en medio */
+    .sect1fond{
+    position:absolute;
+    top:25%;
+    left:2%;
+    padding:0 40px;
+    width: 70%;
+    color:#fafafa;
+}
+.slogText{
+    font-weight: 400;
+    font-size: 30px;
+    font-style: italic;
+    text-shadow: 5px 5px 7px rgb(39, 40, 41);
+    margin-bottom: 0;
+}
+.slogSubText{
+    font-weight: 400;
+    font-size: 25px;
+    font-style: italic;
+    text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 25px;
+    }
+    .contBurger{
+        /* width: 10%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 20px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 20px;
+    }
+    .contRedMobil.active{
+        display:flex;
+    }
+    .subMenu{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .cardOpc{
+        display:flex;
+        flex-direction: row;
+        width: 95%;
+    }
+    .imagCab1,.imagCab2{
+        height: 100%;
+        /* width: 0em; */
+    }
+    .imagCab1{
+        width: 50%;
+    }
+    
+    .textCard{
+        font-size: 13px;
+    }
+    .linkRedSub{
+        padding:2px 10px;
+    }
+    .contRedesSub{
+        gap:10px;
+        display:flex;
+        flex-direction: column;
+    }
+    .reducir{
+        width: 85%;
+    }
+    /* Diseño para el versiculo de en medio */
+    .sect1fond{
+    position:absolute;
+    top:25%;
+    left:2%;
+    padding:0 40px;
+    width: 70%;
+    color:#fafafa;
+}
+.slogText{
+    font-weight: 400;
+    font-size: 24px;
+    font-style: italic;
+    text-shadow: 5px 5px 7px rgb(39, 40, 41);
+    margin-bottom: 0;
+}
+.slogSubText{
+    font-weight: 400;
+    font-size: 21px;
+    font-style: italic;
+    text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+}
+@media screen and (max-width: 320px){
+    .contOtraInfo{
+        display:none;
+    }
+    .hamburgesa{
+        display:block;
+        width: 22px;
+    }
+    .contBurger{
+        /* width: 100%; */
+        display:flex;
+        justify-content: end;
+        padding-right: 14px;
+    }
+    .btnHamburger{
+        width: auto;
+        display:flex;
+        justify-content: center;
+        height: 2.5em;
+        background-color: transparent;
+        border:none
+    }
+    .linkCabe{
+        font-size: 18px;
+    }
+    .contRedMobil.active{
+        display:flex;
+    }
+    .subMenu{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .cardOpc{
+        display:flex;
+        flex-direction: row;
+        width: 95%;
+    }
+    .imagCab1,.imagCab2{
+        height: 100%;
+        /* width: 0em; */
+    }
+    .imagCab1{
+        width: 50%;
+    }
+    
+    .textCard{
+        font-size: 13px;
+    }
+    .linkRedSub{
+        padding:2px 3px;
+    }
+    .contRedesSub{
+        gap:10px;
+        display:flex;
+        flex-direction: column;
+    }
+    .reducir{
+        width: 95%;
+    }
+    /* Diseño para el versiculo de en medio */
+    .sect1fond{
+    position:absolute;
+    top:25%;
+    /* left:2%; */
+    /* padding:0 40px; */
+    width: 55%;
+    color:#fafafa;
+}
+.slogText{
+    font-weight: 400;
+    font-size: 20px;
+    font-style: italic;
+    text-shadow: 5px 5px 7px rgb(39, 40, 41);
+    margin-bottom: 0;
+}
+.slogSubText{
+    font-weight: 400;
+    font-size: 20px;
+    font-style: italic;
+    text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+}
