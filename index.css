@@ -11,22 +11,23 @@ body{
     background-size: cover;
     background-position: center;
     height: 150vh;
+    display:flex;
 }
 .cabecera{
     width: 100%;
     display:flex;
     align-items: center;
-    /* border-bottom: 1px solid rgb(200, 200, 200); */
+    flex-direction: column;
+    position:fixed;
     
 }
 .contCab{
     width: 100%;
     display:flex;
     align-items: center;
-    position:fixed;
     top:.1%;
-    background-color: #cccccc79;
-    /* border-bottom: 1px solid rgb(200, 200, 200); */
+    background-color: rgba(255, 255, 255, 0.474);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 .cabTitulo{
     width: 100%;
@@ -134,8 +135,64 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     justify-content: center;
     height: 2.5em;
     background-color: transparent;
-    border:none
+    border:none;
 }
+/* Los siguientes contenedores seran los del submenu */
+.contRedMobil{
+    display:none;
+    background-color: rgba(255, 255, 255, 0.474);
+}
+.subMenu{
+    display:flex;
+    justify-content: center;
+    gap:20px;
+    padding: 25px 0
+}
+.imagCab1{
+    background-image: url(imagenes/recursos.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 14em;
+}
+.imagCab2{
+    background-image: url(imagenes/redes.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 14em;
+}
+.cardOpc{
+    display:flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: white;
+    border-radius: .6em;
+    overflow:auto;
+}
+.contCard{
+    padding:5px 20px
+}
+.contRedesSub{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.redSub{
+    display:flex;
+    gap:10px
+}
+.linkRedSub{
+    padding:5px 10px;
+    border:2px solid black
+}
+.iconRedes{
+    width: 20px;
+}
+.recurso:hover{
+    cursor: pointer;
+}
+
 
 
 
@@ -145,13 +202,14 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
         display:none;
     }
     .hamburgesa{
-        display:block;
+        display:flex;
         width: 40px;
     }
     .contBurger{
         /* width: 10%; */
         display:flex;
         justify-content: end;
+        /* flex-direction: column; */
         margin-right: auto;
         padding-right: 40px;
     }
@@ -162,6 +220,9 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
         height: 2.5em;
         background-color: transparent;
         border:none
+    }
+    .contRedMobil.active{
+        display:flex;
     }
 
 }
@@ -189,6 +250,23 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     }
     .linkCabe{
         font-size: 24px;
+    }
+    .contRedMobil.active{
+        display:flex;
+    }
+    .contRedesSub{
+        gap:10px;
+        display:flex;
+        flex-direction: column;
+    }
+    .imagCab1,.imagCab2{
+        height: 9em;
+    }
+    .textCard{
+        font-size: 13px;
+    }
+    .linkRedSub{
+        padding:2px 10px;
     }
 }
 
@@ -218,6 +296,44 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     .linkCabe{
         font-size: 22px;
     }
+    /* Ajuste para la seccion de subcabecera */
+    .contRedMobil.active{
+        display:flex;
+    }
+    .subMenu{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .cardOpc{
+        display:flex;
+        flex-direction: row;
+        width: 95%;
+    }
+    .imagCab1,.imagCab2{
+        height: 100%;
+        /* width: 0em; */
+    }
+    .imagCab1{
+        width: 50%;
+    }
+    
+    .textCard{
+        font-size: 13px;
+    }
+    .linkRedSub{
+        padding:2px 10px;
+    }
+    .contRedesSub{
+        gap:10px;
+        display:flex;
+        flex-direction: column;
+    }
+    .reducir{
+        width: 80%;
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 375px){
@@ -245,6 +361,9 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     .linkCabe{
         font-size: 20px;
     }
+    .contRedMobil.active{
+        display:flex;
+    }
 }
 @media screen and (max-width: 320px){
     .contOtraInfo{
@@ -270,5 +389,8 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     }
     .linkCabe{
         font-size: 18px;
+    }
+    .contRedMobil.active{
+        display:flex;
     }
 }
