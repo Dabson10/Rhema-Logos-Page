@@ -130,10 +130,17 @@ y se le dara un color a la pagina con respecto a el color de fondo de la cabecer
 
 /* El siguiente contenedor aparecera solamente en dispositivos mobiles,
 por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobiles*/
-.hamburgesa{
+.hamburgesa,.equis{
     display:none;
     width: 20px;
 }
+.hamburgesa.active{
+    display:none
+}
+.equis.active{
+    display:flex
+}
+
 .contBurger{
     width: 100%;
     display:none;
