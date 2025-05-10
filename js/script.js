@@ -42,3 +42,94 @@ window.addEventListener('scroll', () =>{
 })
 
 
+
+// El siguiente es el carrusel del contenido mas reciente.
+
+const contenedorCarrusel = document.querySelector('.carousel-container');
+const slides = contenedorCarrusel.querySelectorAll('.carousel-slide');
+const botonesPrevio = contenedorCarrusel.querySelector('.prev-button');
+const botonesSiguiente = contenedorCarrusel.querySelector('.next-button');
+const numeroDeSlides = slides.length;
+let indiceActual = 0;
+
+function mostrarSlide(indice) {
+    slides.forEach((slide, i) => {
+        slide.style.display = i === indice ? 'block' : 'none';
+    });
+}
+
+function siguienteSlide() {
+    indiceActual++;
+    if (indiceActual >= numeroDeSlides) {
+        indiceActual = 0;
+    }
+    mostrarSlide(indiceActual);
+}
+
+function previoSlide() {
+    indiceActual--;
+    if (indiceActual < 0) {
+        indiceActual = numeroDeSlides - 1;
+    }
+    mostrarSlide(indiceActual);
+}
+
+botonesSiguiente.addEventListener('click', siguienteSlide);
+botonesPrevio.addEventListener('click', previoSlide);
+
+// Mostrar el primer slide al cargar la página
+mostrarSlide(indiceActual);
+
+
+
+// El siguiente code es para el carrusel en mobil 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carrusel = document.querySelector('.carrusel');
+    const slides = document.querySelectorAll('.carruselImg');
+    const totalSlides = slides.length;
+    const indicadoresContainer = document.createElement('div');
+    indicadoresContainer.classList.add('carrusel-indicators-mob');
+    carrusel.parentNode.appendChild(indicadoresContainer);
+
+    let currentIndex = 0;
+
+    function updateIndicators() {
+        indicadoresContainer.innerHTML = ''; // Limpiar indicadores anteriores
+        for (let i = 0; i < totalSlides; i++) {
+            const indicador = document.createElement('button');
+            indicador.classList.add('indicator-mob');
+            if (i === currentIndex) {
+                indicador.classList.add('active');
+            }
+            indicador.addEventListener('click', () => {
+                currentIndex = i;
+                scrollToSlide(currentIndex);
+                updateIndicators();
+            });
+            indicadoresContainer.appendChild(indicador);
+        }
+    }
+
+    function scrollToSlide(index) {
+        carrusel.scrollTo({
+            left: slides[index].offsetLeft,
+            behavior: 'smooth'
+        });
+    }
+
+    carrusel.addEventListener('scroll', () => {
+        const scrollPosition = carrusel.scrollLeft;
+        const slideWidth = carrusel.offsetWidth;
+        const newIndex = Math.round(scrollPosition / slideWidth);
+
+        if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+            updateIndicators();
+        }
+    });
+
+    updateIndicators(); // Inicializar los indicadores
+    scrollToSlide(0); // Mostrar el primer slide al cargar
+});

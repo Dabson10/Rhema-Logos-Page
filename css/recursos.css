@@ -34,7 +34,7 @@ body{
 }
 header.con-fondo{
     /* background-color: rgba(255, 255, 255, 0.474); */
-    background-color: #ffffffcc;
+    background-color: #d1d0d0b1;
     border-bottom: 1px solid #272829;
     z-index: 999;
 }
@@ -116,7 +116,7 @@ redes sociales, los siguientes estilos seras para esa sublista con ul y li */
 /* El siguiente bloque de diseño es para cuando se desplaza la pagina cierta cantidad
 y se le dara un color a la pagina con respecto a el color de fondo de la cabecera. */
 .red1.con-color, .red2.con-color{
-    background-color: #ffffffcc;
+    background-color: #d1d0d0b1;
 
 }
 .linkRedes:hover{
