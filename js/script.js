@@ -27,6 +27,7 @@ btnRecu.addEventListener('click', () =>{
 const contCabe = document.getElementById('cabecera');
 const coloRed1 = document.getElementById('color')
 const coloRed2 = document.getElementById('color2')
+const contVersi = document.getElementById('contVersi')
 
 
 window.addEventListener('scroll', () =>{
@@ -34,10 +35,12 @@ window.addEventListener('scroll', () =>{
         contCabe.classList.add('con-fondo')
         coloRed1.classList.add('con-color')
         coloRed2.classList.add('con-color')
+        contVersi.classList.add('apa')
     }else{
         contCabe.classList.remove('con-fondo')
         coloRed1.classList.remove('con-color')
         coloRed2.classList.remove('con-color')
+        contVersi.classList.remove('apa')
     }
 })
 

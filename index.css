@@ -102,7 +102,6 @@ redes sociales, los siguientes estilos seras para esa sublista con ul y li */
     border: 2px solid black;
     padding: 5px 20px;
     position: relative;
-
 }
 
 .apareceRedes:hover {
@@ -112,7 +111,7 @@ redes sociales, los siguientes estilos seras para esa sublista con ul y li */
 }
 
 .apareceRedes:hover .subList {
-    /* display:flex; */
+    display: flex;
     flex-direction: column;
     padding: 0;
     list-style-type: none;
@@ -270,15 +269,22 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
 
 .sect1fond {
     position: absolute;
-    top: 25%;
+    top: 55%;
     left: 2%;
     padding: 0 40px;
-    width: 60%;
+    width: 70%;
     color: #fafafa;
+    opacity: 0;
+    transition: opacity 1s ease;
     /* z-index: ; */
 }
 
-.sect1fond.active {
+.sect1fond.apa {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.contVer.active {
     display: none;
 }
 
@@ -300,6 +306,11 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
 /* Carrusel */
 .contImagenesGenMob {
     display: none;
+}
+
+.carruselSec {
+    background-color: rgba(231, 215, 215, 0.389);
+    padding-top: 10px;
 }
 
 .carrusel {
@@ -347,9 +358,6 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
 .carousel-control {
     position: absolute;
     top: 50%;
-    /* left: 10%; */
-    /* margin-left: -5px; */
-    /* margin-right: -20px; */
     transform: translateY(-50%);
     /* Ajusta para centrarlo exactamente */
     width: auto;
@@ -399,8 +407,9 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
 }
 
 /* fin carrusel */
-
-
+.carrusel-indicators-mob {
+    flex-wrap: wrap;
+}
 
 
 /* Media querie para diferentes tipos de pantalla  */
@@ -439,10 +448,10 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond {
         position: absolute;
-        top: 25%;
+        top: 60%;
         left: 2%;
         padding: 0 40px;
-        width: 70%;
+        width: 63%;
         color: #fafafa;
     }
 
@@ -460,70 +469,75 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
         font-style: italic;
         text-shadow: 3px 3px 5px rgb(39, 40, 41);
     }
+
     /* El siguiente diseño es para el carrusel de imagenes en telefonos y desactivar el de desktop */
     /* Carrusel de imagenes */
-.carruselSec {
-    width: 100%;
-    overflow: hidden;
-}
+    .carruselSec {
+        width: 100%;
+        overflow: hidden;
+        margin: 40px 0;
 
-.carrusel {
-    width: 75%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    margin:auto;
-}
+    }
 
-.contImagenesGenMob {
-    width: 100%;
-    display: flex;
-}
+    .carrusel {
+        /* margin-top: 20px; */
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        margin: auto;
+    }
 
-.carruselImg {
-    flex: 0 0 100%;
-    width: 100%;
-    scroll-snap-align: start;
-}
+    .contImagenesGenMob {
+        width: 100%;
+        display: flex;
+    }
 
-.imgPotMobil {
-    display:flex;
-    margin:auto;
-    width: 60%;
-    height: auto;
-}
+    .carruselImg {
+        flex: 0 0 100%;
+        width: 100%;
+        scroll-snap-align: start;
+    }
 
-.info {
-    padding: 1em;
-    text-align: center;
-}
+    .imgPotMobil {
+        display: flex;
+        margin: auto;
+        width: 80%;
+        height: 45em;
+    }
 
-.carrusel-indicators-mob {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
+    .info {
+        padding: 1em;
+        text-align: center;
+    }
 
-.indicator-mob {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #ccc;
-    border: none;
-    margin: 0 5px;
-    cursor: pointer;
-    padding: 0;
-}
+    .carrusel-indicators-mob {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
 
-.indicator-mob.active {
-    background-color: #eeee;
-    width: 35px;
-    height: 15px;
-}
-.contImagenesGenDesk {
-    display: none;
-}
+    .indicator-mob {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .indicator-mob.active {
+        background-color: #eeee;
+        width: 35px;
+        height: 15px;
+    }
+
+    .contImagenesGenDesk {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 425px) and (max-width: 768px) {
@@ -582,10 +596,10 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond {
         position: absolute;
-        top: 25%;
+        top: 55%;
         left: 2%;
         padding: 0 40px;
-        width: 70%;
+        width: 75%;
         color: #fafafa;
     }
 
@@ -602,6 +616,74 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
         font-size: 25px;
         font-style: italic;
         text-shadow: 3px 3px 5px rgb(39, 40, 41);
+    }
+
+    /* Carusel de imagenes */
+    .carruselSec {
+        width: 100%;
+        overflow: hidden;
+        margin: 40px 0;
+
+    }
+
+    .carrusel {
+        /* margin-top: 20px; */
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        margin: auto;
+    }
+
+    .contImagenesGenMob {
+        width: 100%;
+        display: flex;
+    }
+
+    .carruselImg {
+        flex: 0 0 100%;
+        width: 100%;
+        scroll-snap-align: start;
+    }
+
+    .imgPotMobil {
+        display: flex;
+        margin: auto;
+        width: 100%;
+        height: 35em;
+    }
+
+    .info {
+        padding: 1em;
+        text-align: center;
+    }
+
+    .carrusel-indicators-mob {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .indicator-mob {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .indicator-mob.active {
+        background-color: #eeee;
+        width: 35px;
+        height: 15px;
+    }
+
+    .contImagenesGenDesk {
+        display: none;
     }
 }
 
@@ -686,10 +768,10 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond {
         position: absolute;
-        top: 25%;
+        top: 50%;
         left: 2%;
         padding: 0 40px;
-        width: 70%;
+        width: 75%;
         color: #fafafa;
     }
 
@@ -707,6 +789,75 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
         font-style: italic;
         text-shadow: 3px 3px 5px rgb(39, 40, 41);
     }
+
+    /* Carrusel de imagenes */
+    .carruselSec {
+        width: 100%;
+        overflow: hidden;
+        margin: 40px 0;
+
+    }
+
+    .carrusel {
+        /* margin-top: 20px; */
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        margin: auto;
+    }
+
+    .contImagenesGenMob {
+        width: 100%;
+        display: flex;
+    }
+
+    .carruselImg {
+        flex: 0 0 100%;
+        width: 100%;
+        scroll-snap-align: start;
+    }
+
+    .imgPotMobil {
+        display: flex;
+        margin: auto;
+        width: 100%;
+        height: 30em;
+    }
+
+    .info {
+        padding: 1em;
+        text-align: center;
+    }
+
+    .carrusel-indicators-mob {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .indicator-mob {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .indicator-mob.active {
+        background-color: #eeee;
+        width: 35px;
+        height: 15px;
+    }
+
+    .contImagenesGenDesk {
+        display: none;
+    }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 375px) {
@@ -788,7 +939,7 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond {
         position: absolute;
-        top: 25%;
+        top: 55%;
         left: 2%;
         padding: 0 40px;
         width: 70%;
@@ -808,6 +959,74 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
         font-size: 21px;
         font-style: italic;
         text-shadow: 3px 3px 5px rgb(39, 40, 41);
+    }
+
+    /* Carrusel de imagenes */
+    .carruselSec {
+        width: 100%;
+        overflow: hidden;
+        margin: 40px 0;
+
+    }
+
+    .carrusel {
+        /* margin-top: 20px; */
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        margin: auto;
+    }
+
+    .contImagenesGenMob {
+        width: 100%;
+        display: flex;
+    }
+
+    .carruselImg {
+        flex: 0 0 100%;
+        width: 100%;
+        scroll-snap-align: start;
+    }
+
+    .imgPotMobil {
+        display: flex;
+        margin: auto;
+        width: 100%;
+        height: 30em;
+    }
+
+    .info {
+        padding: 1em;
+        text-align: center;
+    }
+
+    .carrusel-indicators-mob {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .indicator-mob {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .indicator-mob.active {
+        background-color: #eeee;
+        width: 35px;
+        height: 15px;
+    }
+
+    .contImagenesGenDesk {
+        display: none;
     }
 }
 
@@ -890,7 +1109,7 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond {
         position: absolute;
-        top: 25%;
+        top: 47%;
         /* left:2%; */
         /* padding:0 40px; */
         width: 55%;
@@ -910,5 +1129,73 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
         font-size: 20px;
         font-style: italic;
         text-shadow: 3px 3px 5px rgb(39, 40, 41);
+    }
+
+    /* Carrusel de imagenes */
+    .carruselSec {
+        width: 100%;
+        overflow: hidden;
+        margin: 40px 0;
+
+    }
+
+    .carrusel {
+        /* margin-top: 20px; */
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        margin: auto;
+    }
+
+    .contImagenesGenMob {
+        width: 100%;
+        display: flex;
+    }
+
+    .carruselImg {
+        flex: 0 0 100%;
+        width: 100%;
+        scroll-snap-align: start;
+    }
+
+    .imgPotMobil {
+        display: flex;
+        margin: auto;
+        width: 100%;
+        height: 30em;
+    }
+
+    .info {
+        padding: 1em;
+        text-align: center;
+    }
+
+    .carrusel-indicators-mob {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .indicator-mob {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .indicator-mob.active {
+        background-color: #eeee;
+        width: 35px;
+        height: 15px;
+    }
+
+    .contImagenesGenDesk {
+        display: none;
     }
 }

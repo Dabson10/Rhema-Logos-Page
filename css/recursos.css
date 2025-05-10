@@ -7,10 +7,10 @@ body{
 }
 /*-----------------------------------------Diseño de la cabecera----------------------------*/
 .contCabGen{
-    background-image: url(/imagenes/fondRecursos.jpg);
+    background-image: url(/imagenes/fondRecursos1.jpg);
     background-size: cover;
-    background-position: center;
-    height: 110vh;
+    background-position: right;
+    height: 100vh;
     display:flex;
 }
 .titulo{
@@ -65,7 +65,12 @@ header.con-fondo{
 }
 .contOtraInfo .lista1 .punto1{
     border: 2px solid #272829;
-    padding:5px 20px
+    padding:5px 20px;
+    /* transition: border-radius 0.3s ease; */
+}
+.punto1:hover{
+    border-radius: .7em;
+    transition: border-radius 0.3s ease;
 }
 
 .linkCabe{
@@ -75,10 +80,11 @@ header.con-fondo{
 /* Para hacer el menu desplegable es necesario un contenedor estra dentro de el ul de 
 redes sociales, los siguientes estilos seras para esa sublista con ul y li */
 .subList{
-    display:none;
+    /* display:none; */
     position:absolute;
     left:-1%; 
-    margin-top:6px
+    margin-top:6px;
+    opacity: 0;
 }
 .apareceRedes{
     border:2px solid black;
@@ -88,6 +94,8 @@ redes sociales, los siguientes estilos seras para esa sublista con ul y li */
 }
 .apareceRedes:hover{
     border-bottom: 2px solid transparent;
+    border-radius: .7em .7em 0 0;
+    transition: border-radius 0.3s ease;
 }
 .apareceRedes:hover .subList{
     display:flex;
@@ -95,6 +103,8 @@ redes sociales, los siguientes estilos seras para esa sublista con ul y li */
     padding:0;
     list-style-type: none;
     color:white;
+    opacity: 1;
+    transition: opacity 0.7s ease;
 }
 .subList{
     padding:0
@@ -221,15 +231,22 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
 
 .sect1fond{
     position:absolute;
-    top:25%;
-    left:2%;
+    top:50%;
+    left:7%;
     padding:0 40px;
     width: 60%;
     color:#fafafa;
+    opacity: 0;
+    transition: opacity 1s ease;
     /* z-index: ; */
 }
-.sect1fond.active{
+.sect1fond.apa{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+.versiculo.active{
     display:none;
+    
 }
 .slogText{
     font-weight: 400;
@@ -279,7 +296,7 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond{
     position:absolute;
-    top:25%;
+    top:50%;
     left:2%;
     padding:0 40px;
     width: 70%;
@@ -345,7 +362,7 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond{
     position:absolute;
-    top:25%;
+    top:50%;
     left:2%;
     padding:0 40px;
     width: 70%;
@@ -433,7 +450,7 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond{
     position:absolute;
-    top:25%;
+    top:50%;
     left:2%;
     padding:0 40px;
     width: 70%;
@@ -519,7 +536,7 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond{
     position:absolute;
-    top:25%;
+    top:50%;
     left:2%;
     padding:0 40px;
     width: 70%;
@@ -604,7 +621,7 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     /* Diseño para el versiculo de en medio */
     .sect1fond{
     position:absolute;
-    top:25%;
+    top:50%;
     /* left:2%; */
     /* padding:0 40px; */
     width: 55%;
