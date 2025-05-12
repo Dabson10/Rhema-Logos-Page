@@ -3,7 +3,7 @@ body{
     margin:0;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    
+    color: #444444;
 }
 /*-----------------------------------------Diseño de la cabecera----------------------------*/
 .contCabGen{
@@ -262,6 +262,171 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     text-shadow: 3px 3px 5px rgb(39, 40, 41);
 }
 
+/* Esta seccion es para la presentacion de la seccion de recursos */
+
+.presentacion{
+    width: 100%;
+    background-color: #F2F2F2;
+    /* display:flex; */
+}
+.sectInfo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding:25px 0 20px
+}
+.img,.contInfo{
+    width: 45%;
+}
+.img{
+    display:flex;
+    justify-content: center;
+}
+.imgEst{
+    width: 60%;
+}
+.marcar{
+    font-weight: 600;
+}
+.titRecu{
+    font-size: 30px;
+}
+.infoRecu{
+    font-size: 18px;
+}
+.bibHori{
+    display:none;
+}
+/* La siguiente seccion es para las tarjetas de las categorias en los estudios */
+
+.contentGen{
+    display:flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    background-color: #E5E5EA;
+}
+/* Contenedor izquierdo */
+.contIzq{
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    padding:10px
+}
+/* El siguiente contenedor es para hacer un ciruclo, esto me servira para 
+ */
+.circle{
+    display: inline-flex;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.btnGen{
+    display:flex;
+    align-items: center;
+    gap:10px;
+    border:none;
+    background-color: transparent;
+    padding:3px 10px;
+    height: 2.2em;
+    border:2px solid #272829;
+    margin:14px 20px;
+    width: 50%;
+    font-size: 16px;
+}
+.listaBtn{
+    padding:0;
+    list-style: none;
+    /* font-size: 16px; */
+}
+/* Los siguientes contenedores seran para cada boton y para cuando se 
+sobreponga el mouse, esto para darle mas estilo con el hover */
+.general:hover{
+    border-radius: 1em;
+    transition:border-radius 1s ease;
+    cursor: pointer;
+}
+.general:hover .circle{
+    background-color: #DFD0B8;
+    transition: background-color 1s ease;
+}
+
+.mayor:hover{
+    border-radius: 1em;
+    transition:border-radius 1s ease;
+    cursor: pointer;
+}
+.mayor:hover .circle{
+    background-color:#FFE1E0;
+    transition: background-color 1s ease;
+}
+.circle.active{
+    background-color: #948979;
+    transition: background-color 1s ease;
+}
+
+.menor:hover{
+    border-radius: 1em;
+    transition:border-radius 1s ease;
+    cursor: pointer;
+}
+.menor:hover .circle{
+    background-color: #FFE1E0;
+    transition: background-color 1s ease;
+}
+
+.listaBtn li{
+    width: 90%;
+}
+
+
+
+/* Contenedor derecho */
+.contDer{
+    display:flex;
+    width: 50%;
+    padding-top:10px;
+    /* background-color: white; */
+    border: 1px solid black;
+    border-radius: 1em;
+    padding:5px 20px 5px 20px 
+}
+.contRecuTit{
+    width: 90%;
+}
+
+.contLib{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:auto;
+    padding:20px 20px;
+    border-top:1px solid rgba(0, 0, 0, 0.562);
+}
+.linksLibros{
+    text-decoration: none;
+    color: #444444;
+    width: 30%;
+}
+.linksLibros:hover{
+    text-decoration: underline;
+}
+/* Los siguientes diseños son para activar y desactivar la seccion que corresponde */
+.contSecMay{
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    width: 100%;
+    transition:opacity .3s ease;
+}
+.contSecMay.active{
+    display:flex;
+    opacity:1;
+    transition: opacity .3s ease;
+}
 
 
 
@@ -315,8 +480,25 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     font-style: italic;
     text-shadow: 3px 3px 5px rgb(39, 40, 41);
 }
-
+/* Seccion para el diseño de la informacion de los recursos */
+.sectInfo{
+    display:flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row-reverse;
+    padding:25px 0 20px
 }
+.img{
+    width: 50%;
+}
+.titRecu{
+    font-size: 25px;
+}
+.infoRecu{
+    font-size: 14px;
+}
+}
+/* Media querie para algunos telefonos y tablets en vertical */
 @media screen and (min-width: 425px) and (max-width: 768px){
     .contOtraInfo{
         display:none;
@@ -380,6 +562,24 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     font-size: 25px;
     font-style: italic;
     text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+/* Seccion para el diseño de la informacion de los recursos */
+.sectInfo{
+    display:flex;
+    flex-direction: column;
+    padding:25px 0 20px
+}
+.img{
+    display:none;
+}
+.contInfo{
+    width: 80%;
+}
+.titRecu{
+    font-size: 20px;
+}
+.infoRecu{
+    font-size: 13px;
 }
 }
 
@@ -469,6 +669,24 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     font-style: italic;
     text-shadow: 3px 3px 5px rgb(39, 40, 41);
 }
+/* Diseño para aclara de que es la seccion */
+.sectInfo{
+    display:flex;
+    flex-direction: column;
+    padding:25px 0 20px
+}
+.img{
+    display:none;
+}
+.contInfo{
+    width: 80%;
+}
+.titRecu{
+    font-size: 20px;
+}
+.infoRecu{
+    font-size: 13px;
+}
 }
 
 @media screen and (min-width: 320px) and (max-width: 375px){
@@ -555,6 +773,24 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     font-style: italic;
     text-shadow: 3px 3px 5px rgb(39, 40, 41);
 }
+/* Diseño para aclara de que es la seccion */
+.sectInfo{
+    display:flex;
+    flex-direction: column;
+    padding:25px 0 20px
+}
+.img{
+    display:none;
+}
+.contInfo{
+    width: 80%;
+}
+.titRecu{
+    font-size: 20px;
+}
+.infoRecu{
+    font-size: 13px;
+}
 }
 @media screen and (max-width: 320px){
     .contOtraInfo{
@@ -639,5 +875,23 @@ por lo tanto en esta seccion estara desaparecido y aparecera solamente en mobile
     font-size: 20px;
     font-style: italic;
     text-shadow: 3px 3px 5px rgb(39, 40, 41);
+}
+/* Diseño para aclara de que es la seccion */
+.sectInfo{
+    display:flex;
+    flex-direction: column;
+    padding:25px 0 20px
+}
+.img{
+    display:none;
+}
+.contInfo{
+    width: 80%;
+}
+.titRecu{
+    font-size: 20px;
+}
+.infoRecu{
+    font-size: 13px;
 }
 }

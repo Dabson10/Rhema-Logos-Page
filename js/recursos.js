@@ -44,4 +44,47 @@ window.addEventListener('scroll', () =>{
     }
 })
 
+// Las siguientes funciones son para agregar diseño y que se muestre cada seccion
+//correspondiente a su boton,
+// por lo que las siguientes variables son entre botones y contenedores de cada seccion
+
+const btnGen = document.getElementById('btnGen')
+const btnMya = document.getElementById('btnMay')
+const btnMen = document.getElementById('btnMen')
+// Para especificar en que seccion esta tambien agregaremos diseño con .active
+const contCircle = document.getElementById('opc1')
+const contMenor = document.getElementById('contMenor')
+
+// Las siguientes variables son para cambiar informacion con forme se active
+const titulo = document.getElementById('tituloSec')
+const descrip = document.getElementById('descSec')
+
+function apaGeneral(){
+    opc1.classList.toggle('active')
+}
+
+function menores(){
+contMenor.classList.toggle('active')
+    if (contMenor.classList.contains('active')){
+        titulo.innerHTML = `Profetas Menores`
+        descrip.innerHTML = `Descripcion de la seccion`
+    }else{
+        titulo.innerHTML =`Busqueda`
+        descrip.innerHTML = `Si deseas algun PDF selecciona la categoria a la que pertenece para que lo 
+                    pueda descargar`
+    }
+    
+    // Si se activa la seccion, lo unico que falta que si otra esta abierta, se debe de 
+    // cerrar .
+    
+}
+
+
+
+
+
+// La siguiente funcion es para mostrar la seccion de los PDFs que aun no hay
+function noDisponible(){
+    alert('Este libro aun no esta terminado. Ten paciencia ')
+}
 
